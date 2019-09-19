@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # if you're in NZ, this is faster
-# cat /etc/apt/sources.list| sed "s/\/\/archive.ubuntu.com/nz.archive.ubuntu.com/" > /tmp/sources.list
-# sudo mv /etc/apt/sources.list /etc/apt/sources.list.ori
-# sudo mv /tmp/sources.list /etc/apt/sources.list
-# sudo apt-get update
+cat /etc/apt/sources.list| sed "s/\/\/archive.ubuntu.com/nz.archive.ubuntu.com/" > /tmp/sources.list
+sudo mv /etc/apt/sources.list /etc/apt/sources.list.ori
+sudo mv /tmp/sources.list /etc/apt/sources.list
+sudo apt-get update
 
 # if you're gerald:
-# sudo apt install -y tightvncserver icewm
+sudo apt install -y tightvncserver icewm
 
 # needed in lxc, ignored if already there.
 sudo apt-get install -y openssh-server
