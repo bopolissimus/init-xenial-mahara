@@ -23,3 +23,7 @@ $cfg->behat_dbprefix = 'behat_'; // must not empty
 $cfg->behat_dataroot = "/var/lib/maharadata/master_behat"; // Behat's copy of maharadata
 $cfg->behat_wwwroot = 'http://localhost:8000'; // Must be this
 $cfg->behat_selenium2 = "http://127.0.0.1:4444/wd/hub"; // Must be this
+
+# suggested by apache install.  should add to the wiki?
+$cfg->passwordsaltmain = 'lahMah9ooCaedooS';
+$cfg->urlsecret = 'ui6ith6aiShegiri';

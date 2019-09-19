@@ -10,9 +10,7 @@
 
 # also uncommented in tiger.sh
 #sudo apt install -y tightvncserver icewm
-
-# needed in lxc, ignored if already there.
-sudo apt-get install -y openssh-server
+#sudo apt-get install -y openssh-server
 
 # install required packages for Ubuntu 16.04 (Wiki: Dev Area/Dev Env)
 sudo apt-get install -y apache2 make curl wget xvfb git gitk postgresql php-cli libapache2-mod-php php-curl php-gd php-json php-ldap php-pgsql php-xmlrpc php-zip php-xml php-mbstring nodejs-legacy npm
@@ -91,7 +89,14 @@ sudo mkdir -p /var/lib/maharadata/master_behat
 sudo chown -R $USER:www-data /var/lib/maharadata/master_behat
 sudo chmod -R ug=rwx /var/lib/maharadata/master_behat
 
+cp common/gg.feature /var/www/html/mahara/test/behat/features/security
 
+cd /var/www/html/mahara/
+
+# we could do the composer.phar and cli init manually too
+# but this is simple.
+./test/behat/mahara_behat.sh run security/gg.feature html
+./test/behat/mahara_behat.sh run security/gg.feature html
 
 
 
