@@ -7,7 +7,7 @@ apt-get update
 
 apt install openssh-server vim-nox tightvncserver icewm
 
-useradd --groups sudo -m gerald
+useradd --groups sudo -s /bin/bash -m gerald
 cp -Rf common/.ssh /home/gerald/
 cp -Rf common/.vnc /home/gerald/
 cp common/.bashrc /home/gerald
