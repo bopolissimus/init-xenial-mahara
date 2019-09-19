@@ -1,5 +1,12 @@
 #!/bin/bash
 
+cat /etc/apt/sources.list| sed "s/\/\/archive.ubuntu.com/nz.archive.ubuntu.com/" > /tmp/sources.list
+mv /etc/apt/sources.list /etc/apt/sources.list.ori
+mv /tmp/sources.list /etc/apt/sources.list
+apt-get update
+
+apt install openssh-server vim-nox tightvncserver icewm
+
 useradd --groups sudo -m gerald
 cp -Rf common/.ssh /home/gerald/
 cp -Rf common/.vnc /home/gerald/
