@@ -2,6 +2,7 @@
 export NAME=m1
 
 sudo lxc-create -n $NAME -t download -- -d ubuntu -r xenial -a amd64
+sudo lxc-start -n $NAME
 sudo lxc-attach -n $NAME
 cd /root
 apt install -y git
