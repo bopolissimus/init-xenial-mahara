@@ -79,6 +79,7 @@ sudo apache2ctl graceful
 sudo sh -c "echo '* * * * * www-data /usr/bin/php /home/<your username>/code/mahara/htdocs/lib/cron.php >/dev/null 2>&1' > /etc/cron.d/mahara"
 
 pushd $CODE
+npm cache clean --force
 npm install
 sudo npm install -g gulp
 make css
