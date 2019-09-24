@@ -16,9 +16,8 @@ cd /home/gerald
 sudo cp -Rf /root/init-xenial-mahara .
 chown -R gerald:gerald init-xenial-mahara
 
-# important, run this as gerald.  if you're root, become gerald first.
-# although you could run this as root too and then just always do things
-# as root
+# run as gerald (with -i so $HOME is also set correctly) so that
+# files are owned by gerald, not root
 sudo -i -u gerald /bin/bash -c "cd init-xenial-mahara;./xenial_setup.sh"
 
 
