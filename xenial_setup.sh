@@ -13,7 +13,10 @@
 #sudo apt-get install -y openssh-server
 
 # install required packages for Ubuntu 16.04 (Wiki: Dev Area/Dev Env)
-sudo apt-get install -y apache2 make curl wget xvfb git gitk postgresql php-cli libapache2-mod-php php-curl php-gd php-json php-ldap php-pgsql php-xmlrpc php-zip php-xml php-mbstring nodejs-legacy npm
+sudo apt-get install -y apache2 make curl wget xvfb git gitk postgresql php-cli libapache2-mod-php php-curl php-gd php-json php-ldap php-pgsql php-xmlrpc php-zip php-xml php-mbstring nodejs-legacy npm 
+
+echo "Now installing postfix, please select Local only"
+sudo apt-get install -y postfix
 
 # is memcached required?  it's not in the docs?  -- still the errors though.  this isn't the reason.
 sudo apt-get install -y memcached
@@ -54,7 +57,7 @@ sudo -u postgres psql -c "alter user maharauser with password 'maharapassword'"
 sudo -u postgres createdb -Omaharauser mahara-master
 
 # edit $CODE/htdocs/config.php to have your actual email address.
-cat common/config.php | sed "s/EMAIL_ADDRESS/$USER@localhost/" > $CODE/htdocs/config.php
+cat common/config.php | sed "s/EMAIL_ADDRESS/$USER@example.com/" > $CODE/htdocs/config.php
 
 sudo mkdir /var/lib/maharadata
 sudo mkdir /var/lib/maharadata/master
