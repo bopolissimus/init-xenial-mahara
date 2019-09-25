@@ -99,6 +99,11 @@ cp common/g*.sh ~
 
 cd /var/www/html/mahara/
 
+sudo mkdir -p /var/lib/maharadata/master_behat
+sudo chmod -R ug+rwx /var/lib/maharadata/master_behat
+sudo chown -R $USER:www-data /var/lib/maharadata
+
+
 # we could do the composer.phar and cli init manually too
 # but this is simple.
 ./test/behat/mahara_behat.sh run security/gg.feature html
