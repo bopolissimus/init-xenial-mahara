@@ -10,6 +10,7 @@ export NAME=$1
 
 sudo lxc-create -n $NAME -t download -- -d ubuntu -r xenial -a amd64
 sudo lxc-start -n $NAME
+sleep 5
 sudo lxc-attach -n $NAME -- bash -c "cd /root;apt install -y git;git clone https://github.com/bopolissimus/init-xenial-mahara.git"
 
 sudo lxc-attach -n $NAME -- bash -c "cd /root;cd init-xenial-mahara;./tiger.sh"
