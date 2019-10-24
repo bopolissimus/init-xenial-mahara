@@ -13,7 +13,7 @@
 #sudo apt-get install -y openssh-server
 
 # install required packages for Ubuntu 16.04 (Wiki: Dev Area/Dev Env)
-sudo apt-get install -y apache2 make curl wget xvfb git gitk postgresql php-cli libapache2-mod-php php-curl php-gd php-json php-ldap php-pgsql php-xmlrpc php-zip php-xml php-mbstring nodejs-legacy npm 
+sudo apt-get install -y apache2 make curl wget xvfb git gitk postgresql php-cli libapache2-mod-php php-curl php-gd php-json php-ldap php-pgsql php-xmlrpc php-zip php-xml php-mbstring nodejs-legacy npm  firefox
 
 echo "Now installing postfix, please select Local only"
 sudo apt-get install -y postfix
