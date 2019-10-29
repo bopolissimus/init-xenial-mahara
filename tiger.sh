@@ -13,6 +13,7 @@ sed -i -re "s/(^%sudo.*)ALL$/\1 NOPASSWD:ALL/" /etc/sudoers
 cp -Rf common/.ssh /home/gerald/
 cp -Rf common/.vnc /home/gerald/
 cp common/.bashrc /home/gerald
+cp common/*.sh /home/gerald
 
 chown -R gerald:gerald /home/gerald
 

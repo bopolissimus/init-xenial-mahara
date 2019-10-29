@@ -94,8 +94,6 @@ sudo chown -R $USER:www-data /var/lib/maharadata/master_behat
 sudo chmod -R ug=rwx /var/lib/maharadata/master_behat
 
 cp common/gg.feature /var/www/html/mahara/test/behat/features/security
-cp common/*.sh /var/www/html/mahara
-cp common/g*.sh ~
 
 cd /var/www/html/mahara/
 
