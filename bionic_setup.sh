@@ -19,7 +19,7 @@ sudo apt-get -y install make curl wget xvfb git gitk postgresql
 sudo apt-get -y install php7.2-common php-cli libapache2-mod-php7.2 php7.2-curl php7.2-gd
 sudo apt-get -y install php-json php-ldap php-pgsql php-xmlrpc php-zip php-xml php-mbstring 
 
-sudo apt-get -y install libssl-dev
+sudo apt-get -y install libssl-dev firefox
 
 
 a2enmod php7.2
