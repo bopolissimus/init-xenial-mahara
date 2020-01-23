@@ -17,4 +17,6 @@ cp common/*.sh /home/gerald
 
 chown -R gerald:gerald /home/gerald
 
+# workaround chromium-browser not displaying correctly in my lxc setups when X11Forwarding
+sudo -l -u gerald  xdg-mime default firefox.desktop text/html
 
