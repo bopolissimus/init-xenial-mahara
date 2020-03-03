@@ -7,6 +7,9 @@ apt-get update
 
 apt install -y openssh-server vim-nox tightvncserver icewm lsof
 
+# in case we're testing with a dev jenkins
+apt install -y jq
+
 useradd --groups sudo -s /bin/bash -m gerald
 sed -i -re "s/(^%sudo.*)ALL$/\1 NOPASSWD:ALL/" /etc/sudoers
 
