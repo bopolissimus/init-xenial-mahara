@@ -112,10 +112,6 @@ cp common/gg.feature /var/www/html/mahara/test/behat/features/security
 
 cd /var/www/html/mahara/
 
-sudo mkdir -p /var/lib/maharadata/master_behat
-sudo chmod -R ug+rwx /var/lib/maharadata/master_behat
-sudo chown -R $USER:www-data /var/lib/maharadata
-
 make css
 make initcomposer
 
