@@ -5,7 +5,7 @@ mv /etc/apt/sources.list /etc/apt/sources.list.ori
 mv /tmp/sources.list /etc/apt/sources.list
 apt-get update
 
-apt install -y openssh-server vim-nox tightvncserver icewm lsof
+apt install -y openssh-server vim-nox lsof mate-desktop-environment xrdp xauth
 
 # in case we're testing with a dev jenkins
 apt install -y jq
