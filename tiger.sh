@@ -17,6 +17,8 @@ cp -Rf common/.ssh /home/gerald/
 cp -Rf common/.vnc /home/gerald/
 cp common/.bashrc /home/gerald
 cp common/*.sh /home/gerald
+mkdir /home/gerald/bin
+cp common/bin/* /home/gerald/bin
 
 chown -R gerald:gerald /home/gerald
 

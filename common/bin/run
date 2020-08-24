@@ -1,0 +1,46 @@
+#!/bin/bash
+
+if [ -z $1 ]
+then
+  echo "specify a test."
+  exit -1
+fi
+
+FEATURE=""
+LIM=10
+
+for p in $1 $2
+do
+  echo $p | egrep "\.feature$" > /dev/null 2>&1
+  if [ "0" = "$?" ]
+  then
+    FEATURE=$p
+  fi
+
+  echo $p | egrep "^[0-9]+$" > /dev/null 2>&1
+  if [ 0 != $? ]
+  then
+    LIM=$2
+  fi
+done
+
+LOGFB=`tempfile`
+rm -f $LOGFB 
+
+if [ -z $FEATURE ]
+then
+   echo "feature file not given, exiting."
+   exit -1
+fi
+
+pushd /var/www/html/mahara
+
+for n in $(seq 1 $LIM)
+do
+  echo $n $LOGFB
+  ./test/behat/mahara_behat.sh runheadless $FEATURE >> $LOGFB 2>&1
+done
+popd
+
+egrep "scenario.*\(.*passed|failed\)" $LOGFB
+

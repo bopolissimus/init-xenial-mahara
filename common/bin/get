@@ -1,0 +1,12 @@
+#!/bin/bash
+cd /var/www/html/mahara
+
+git checkout master
+git fetch
+git pull
+git branch -D upgrade-chromedriver
+
+git fetch https://reviews.mahara.org/mahara refs/changes/28/11128/3 && git checkout FETCH_HEAD
+
+git checkout -b upgrade-chromedriver
+
